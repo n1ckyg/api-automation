@@ -9,7 +9,7 @@ pipeline {
                 }
         }
         }
-        
+
         stage('Bvejuma-izvietosana-dev-vide') {
             steps {
                 script{
@@ -59,7 +59,7 @@ pipeline {
         }
     }
 }
-}
+
 
 def deploy(String enviroment){
     echo "Deployment to ${enviroment} started.."
