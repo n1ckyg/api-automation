@@ -58,6 +58,7 @@ pipeline {
         }
     }
 }
+}
 
 def deploy(String enviroment){
     echo "Deployment to ${enviroment} started.."
