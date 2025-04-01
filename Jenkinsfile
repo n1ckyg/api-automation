@@ -5,10 +5,11 @@ pipeline {
         stage('Buvejuma-izveide') {
             steps {
                 script{
-                    build
+                    build()
                 }
         }
-
+        }
+        
         stage('Bvejuma-izvietosana-dev-vide') {
             steps {
                 script{
