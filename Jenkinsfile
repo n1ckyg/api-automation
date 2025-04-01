@@ -4,44 +4,69 @@ pipeline {
     stages {
         stage('Buvejuma-izveide') {
             steps {
-                echo 'Buildig of node application is  starting..'
-            }
+                script{
+                    build
+                }
         }
 
         stage('Bvejuma-izvietosana-dev-vide') {
             steps {
-                echo 'Deployment ot dev started..'
+                script{
+                    deploy("DEV")
+                }
             }
         }
 
         stage('Testu-izpilde-dev-vide') {
             steps {
-                echo 'Testing on dev has started..'
+                script{
+                    test("DEV")
+                }
             }
         }
 
         stage('Bvejuma-izvietosana-stg-vide') {
             steps {
-                echo 'Deployment ot stg started..'
+                script{
+                    deploy("STG")
+                }
             }
         }
 
         stage('Testu-izpilde-stg-vide') {
             steps {
-                echo 'Testing on stg has started..'
+                script{
+                    test("STG")
+                }
             }
         }
 
         stage('Bvejuma-izvietosana-prd-vide') {
             steps {
-                echo 'Deployment ot prd started..'
+                script{
+                    deploy("PRD")
+                }
             }
         }
 
         stage('Testu-izpilde-prd-vide') {
             steps {
-                echo 'Testing on prd has started..'
+               script{
+                    test("PRD")
+                }
             }
         }
     }
+}
+
+def deploy(String enviroment){
+    echo 'Deployment ot ${enviroment} started..'
+}
+
+def test(String enviroment){
+    echo 'Testing to ${enviroment} started..'
+}
+
+def build(String enviroment){
+    echo 'Building to enviroment started..'
 }
