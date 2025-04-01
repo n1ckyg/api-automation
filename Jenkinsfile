@@ -60,13 +60,13 @@ pipeline {
 }
 
 def deploy(String enviroment){
-    echo 'Deployment ot ${enviroment} started..'
+    echo "Deployment to ${enviroment} started.."
 }
 
 def test(String enviroment){
-    echo 'Testing to ${enviroment} started..'
+    echo "Testing to ${enviroment} started.."
 }
 
-def build(String enviroment){
-    echo 'Building to enviroment started..'
-}
+def build(){
+    echo "Building to enviroment started.."
+    }
